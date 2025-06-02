@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sentiment Analyzer</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 50px; }
+    input[type="text"] { width: 300px; padding: 10px; }
+    input[type="submit"] { padding: 10px 20px; }
+  </style>
+</head>
+<body>
+  <h1>Sentiment Analysis Web App</h1>
+  <form method="POST" action="/predict">
+    <input type="text" name="user_input" placeholder="Enter your sentence" required />
+    <br><br>
+    <input type="submit" value="Analyze" />
+  </form>
+
+  {% if result %}
+    <h2>Input: "{{ input }}"</h2>
+    <h2>Sentiment: <span style="color:blue">{{ result.upper() }}</span></h2>
+  {% endif %}
+</body>
+</html>
